@@ -24,15 +24,16 @@ body {
   align-items: center;
   justify-content: space-between;
   border: 1px solid white;
-  height: 60px;
+  height: 67px;
   width: 100%;
 }
 .upgradesection button , .autoclickers button{
   height: 100%;
-  width: 100px;
+  width: 30%;
 }
 .upgradesection p ,.autoclickers p{
-  padding: 0 15px;
+  text-align: center;
+  width: 100%;
 }
 
 .mainbtn {
@@ -40,7 +41,24 @@ body {
   height: 100px;
   border-radius: 50%;
 }
-button:active {
-  transform: scale(1.1);
-  transition: 0.05s;
+button {
+  background-color:green;
+  color: white;
+}
+#wallet , #dollar {
+  color: rgb(1, 204, 1);
+  font-size: 20px;
+}
+
+#getanimation {
+  position: absolute;
+  top: 23.8%;
+  left: 72%;
+  transform: translate(-70%, -20%);
+  color: rgb(1, 204, 1);
+  opacity: 0;
+}
+.mainbtn:active + #getanimation {
+  opacity: 1;
+  transition: 0.1s;
 }

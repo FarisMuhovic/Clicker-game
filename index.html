@@ -11,20 +11,24 @@
   <body>
     <h4>This is a simple clicker game</h4>
     <p>Click the button to get more money!</p>
-    <button class="mainbtn" onclick="clickmebtn()">Click Me</button>
-    <p>Money: <span id="wallet">0</span><span>$</span></p>
+    <button class="mainbtn" onclick="clickmebtn()">
+      <p>Click Me</p>
+    </button>
+    <span id="getanimation"></span>
+    <p>Wallet: <span id="wallet">0</span><span id="dollar">$</span></p>
+    <p>Money per click: <span id="mpc"></span></p>
     <div class="upgradesection">
       <p>Upgrade your clicks to gain more money.</p>
       <button onclick="upgrade()">
         <p>Cost: <span id="cost"></span><span>$</span></p>
-        <p>+<span id="clickdmg"></span>$</p>
+        <p>+<span id="clickdmg"></span>2$</p>
         <p>Level <span id="clicklvl">0</span></p>
       </button>
     </div>
     <div class="autoclickers">
       <p>Buy a monkey to click for you.</p>
       <button onclick="monkey()" id="monke">
-        <p id="monkeypriceunlock">Cost: 50000$</p>
+        <p id="monkeypriceunlock">Cost: 1500$</p>
       </button>
     </div>
     <div class="autoclickers">
@@ -34,66 +38,11 @@
         <p>Level: <span id="bananalvl">0</span></p>
       </button>
     </div>
-    <script>
-      var wallet = 0
-      document.getElementById("wallet").innerHTML = wallet
-      function clickmebtn() {
-        wallet += clickdmg
-        document.getElementById("wallet").innerHTML = wallet
-      }
-      var clickdmg = 1
-      var costofupgrade = 10
-      document.getElementById("cost").innerHTML = costofupgrade
-      document.getElementById("clickdmg").innerHTML = clickdmg
-      var level = 0
-      function upgrade() {
-        if (wallet >= costofupgrade) {
-          wallet -= costofupgrade
-          costofupgrade += 16
-          clickdmg += 2
-          level += 1
-          document.getElementById("cost").innerHTML = costofupgrade
-          document.getElementById("wallet").innerHTML = wallet
-          document.getElementById("clickdmg").innerHTML = clickdmg
-          document.getElementById("clicklvl").innerHTML = level
-        }
-      }
-      var monkeyunlocked = false
-      function monkey() {
-        if (wallet >= 1) {
-          wallet -= 1
-          monkeyunlocked = true
-          document.getElementById("wallet").innerHTML = wallet
-          document.getElementById("monkeypriceunlock").innerHTML = "UNLOCKED"
-          document.getElementById("monke").onclick = null
-          setInterval(monkeywork,1000)
-        }
-      }
-      var monkeyprofit = 100
-      var bananaprice = 100
-      function monkeywork() {
-        wallet += monkeyprofit
-        document.getElementById("wallet").innerHTML = wallet
-      }
-      var bananalvl = 0
-      document.getElementById("costofbanana").innerHTML = bananaprice
-      function bananas() {
-        if (wallet >= bananaprice && monkeyunlocked == true){
-            monkeyprofit += 15
-            wallet -= bananaprice
-            bananaprice += 30
-            bananalvl += 1
-            document.getElementById("wallet").innerHTML = wallet
-            document.getElementById("bananalvl").innerHTML = bananalvl
-            document.getElementById("costofbanana").innerHTML = bananaprice
-          }
-    }
-
+    <script src="scripts.js">
     </script>
     
   </body>
 </html>
 
 <!-- 
-    buttons color purchase
   fix repetitve document.get commands -->
