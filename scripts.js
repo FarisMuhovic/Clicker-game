@@ -1,4 +1,4 @@
-var wallet = 1500;
+var wallet = 0;
 var clickdmg = 1;
 var costofupgrade = 10;
 var level = 0;
